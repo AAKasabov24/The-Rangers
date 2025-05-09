@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,37 +7,71 @@
     <link rel="stylesheet" href="LuxuryRental.css">
 </head>
 <body>
-    <header>
-        <h1> Добре дошли в Luxury Rentals!</h1>
-    
-    <nav>
-        <a href="home.html">Home Page</a>
-        <a href="rent.html">How to rent a car</a>
-        <a href="cars.html">Our Cars</a>
-        <a href="contact.html">Contact us</a>
-
-    </nav>
+<header>
+        <section class="header-container">
+            <h1>Welcome to Luxury Rentals!</h1>
+            <nav>
+                <a href="home.html">Home Page</a>
+                <a href="rent.html">Rent</a>
+                <a href="cars.html">Our Cars</a>
+                <a href="contact.html">Contacts</a>
+            </nav>
+        </section>
     </header>
 
-    <section id="home">
-        <h2>Your partner for rent a car</h2>
-        <p>Choose a luxury car and start your adventure!</p>
+    <section id="home-intro">
+        <section class="intro-container">
+            <h2>Вашият партньор за луксозни автомобили под наем</h2>
+            <p>Изберете луксозна кола и започнете вашето приключение с нас!</p>
+            <a href="cars.html" class="btn-primary">Прегледайте колите ни</a>
+        </section>
     </section>
 
-    <section id="cars">
-        <h2>Our cars</h2>
-        <p>We offer a wide variety of luxury cars</p>
-
-        <img class="car photos" id="s63" src="images/s 63.webp" >
-        <p>Mercedes S63 E Performance - 120 EUR a day</p>  
-        <p>Mercedes GLS 600 Maybach - 160 EUR a day</p>  
-        <p>Rolls Royce Cullinan - 220 EUR a day</p>  
-        
-        <p>Audi A8 - 110 EUR a day</p>  
-           
-            
-            
-        
+    <section id="services">
+        <h2>Нашите услуги</h2>
+        <section class="services-container">
+            <section class="service">
+                <h3>Луксозни коли</h3>
+                <p>Предлагаме най-добрите автомобили от топ брандове като Mercedes, Audi, Rolls Royce и други.</p>
+            </section>
+            <section class="service">
+                <h3>Гъвкавост</h3>
+                <p>Изберете деня, който ви подхожда, и наемете кола за какъвто период желаете.</p>
+            </section>
+            <section class="service">
+                <h3>Лесно резервиране</h3>
+                <p>Чрез нашия онлайн формуляр можете да резервирате колата си бързо и удобно.</p>
+            </section>
+        </section>
     </section>
+
+    <section id="testimonials">
+        <h2>Какво казват нашите клиенти</h2>
+        <section class="testimonial-container">
+            <section class="testimonial">
+                <p>"Luxury Rentals предоставиха най-доброто обслужване и кола, която съм наемал!"</p>
+                <p><strong>Иван Петров</strong></p>
+            </section>
+            <section class="testimonial">
+                <p>"Бързо и лесно резервиране, колата беше на високо ниво. Препоръчвам!"</p>
+                <p><strong>Мария Георгиева</strong></p>
+            </section>
+        </section>
+    </section>
+
+    <section id="contact">
+        <h2>Свържете се с нас</h2>
+        <p>Имаме екип на разположение, готов да отговори на всички въпроси. За повече информация не се колебайте да се свържете с нас.</p>
+        <a href="contact.html" class="btn-primary">Свържете се с нас</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Luxury Rentals. Всички права запазени.</p>
+        <section>
+            <a href="#">Политика за конфиденциалност</a> | 
+            <a href="#">Условия за ползване</a>
+        </section>
+    </footer>
+
 </body>
 </html>
