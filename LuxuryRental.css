@@ -45,7 +45,7 @@ img {
   }
   
   nav a:hover {
-    background-color: #575757;
+    background-color: #bebfc0;
     border-radius: 5px;
   }
   
@@ -59,8 +59,8 @@ img {
   
   #home-intro {
     text-align: center;
-    background: whitesmoke;
-    color: white;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     padding: 40px 0;
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -78,7 +78,6 @@ img {
     line-height: 1.6;
   }
   
-  /* Стилове за картите с коли */
    .car {
     margin-bottom: 30px;
     border-radius: 10px;
@@ -102,7 +101,7 @@ img {
   
   .car .price {
     font-size: 1.5em;
-    color: #ff6347;
+    color: #04c007;
     font-weight: bold;
     margin-top: 15px;
   }
@@ -117,7 +116,6 @@ img {
     margin-top: 15px;
   }
   
-  /* Стилове за формуляра за резервация */
   #booking-form {
     max-width: 700px;
     margin: 50px auto;
@@ -149,7 +147,7 @@ img {
   }
   
   #booking-form button {
-    background-color: #ff6347;
+    background-color: #25c302;
     color: white;
     font-size: 1.2em;
     padding: 15px 20px;
@@ -162,7 +160,7 @@ img {
   }
   
   #booking-form button:hover {
-    background-color: #ff7f50;
+    background-color: #0fc60c;
   }
   
   #confirmation {
@@ -223,7 +221,7 @@ img {
   .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 10px;
   }
   
   .gallery img {
@@ -267,3 +265,85 @@ img {
     text-decoration: underline;
   }
   
+
+
+header {
+    background-color:#1a5276;
+    color: rgb(0, 0, 0);
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: #1a5276;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: bold;
+}
+
+main {
+    padding: 30px;
+}
+
+#car-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.car {
+    background-color: #1a5276;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.car:hover {
+    transform: scale(1.05);
+}
+
+.car h3 {
+    background-color: #2f2d2d;
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 10px;
+    padding: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+.car p {
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #f8f8f8;
+    margin-top: 40px;
+    color: #000000;
+    font-weight: bold;
+}
+
+
+
