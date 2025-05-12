@@ -1,0 +1,238 @@
+/* Reset & Base Styles */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-bg: #f5f6fa; /* Light, modern background */
+    --header-bg: #1a5276; /* Elegant deep blue */
+    --text-color: #222; /* Dark text for good contrast */
+    --white: #fff;
+    --btn-primary: #1a5276; /* Blue for main buttons */
+    --btn-hover: #154360; /* Darker blue on hover */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.2);
+    --transition: 0.3s ease;
+    --radius: 12px; /* Rounded corners */
+    --max-width: 1200px; /* Max width for main content */
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    background-color: var(--header-bg);
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+/* Navigation */
+nav {
+    margin-top: 1.5rem;
+}
+
+nav a {
+    color: var(--white);
+    margin: 0 1.5rem;
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color var(--transition);
+}
+
+nav a:hover {
+    color: #f5a623; /* Gold highlight on hover */
+}
+
+/* Main Content */
+main {
+    padding: 2.5rem 1.5rem;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+    border-radius: var(--radius);
+}
+
+/* Car Info Section */
+#car-details {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2rem;
+    transition: box-shadow var(--transition);
+}
+
+#car-details:hover {
+    box-shadow: var(--shadow-md);
+}
+
+#car-details h2 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.car-info {
+    text-align: center;
+}
+
+.car-info img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.car-info img:hover {
+    transform: scale(1.05); /* Zoom effect */
+    box-shadow: var(--shadow-md);
+}
+
+.car-info p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    line-height: 1.8;
+}
+
+.car-info ul {
+    text-align: left;
+    margin: 1.5rem auto;
+    max-width: 650px;
+    padding-left: 1.5rem;
+}
+
+.car-info li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    transition: transform var(--transition);
+    box-shadow: var(--shadow-md);
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-size: 1.2rem;
+    transition: background-color var(--transition);
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+}
+
+.btn-book {
+    background-color: var(--btn-primary);
+    color: var(--white);
+}
+
+.btn-book:hover {
+    background-color: var(--btn-hover);
+}
+
+.btn-book:active {
+    background-color: darken(var(--btn-hover), 10%);
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    font-size: 1rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 1rem 0;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    #car-details {
+        padding: 1.5rem;
+    }
+}
+
+@media (hover: none) {
+    .gallery img:hover {
+        transform: none;
+    }
+}
+

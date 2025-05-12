@@ -1,0 +1,118 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Bookman Old Style', serif;
+}
+
+body {
+    background-color: #1a5276;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh; /* Ensures body takes full viewport height */
+}
+
+/* Header */
+#header header {
+    background-color: #1a5276;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 3.5em;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Navigation */
+nav {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 12px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: #1a5276;
+    font-size: 1.5em;
+    padding: 10px 25px;
+    margin: 0 15px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #bebfc0;
+    border-radius: 5px;
+    text-decoration: underline;
+    transform: translateY(-2px);
+}
+
+/* Contact Info */
+#contact-info {
+    padding: 40px;
+    text-align: center;
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#contact-info p {
+    font-size: 1.5em;
+    margin: 20px 0;
+    color: #333;
+}
+
+#contact-info a {
+    color: #ff6347;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1em;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    nav a {
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+
+    #contact-info p {
+        font-size: 1.2em;
+    }
+}
