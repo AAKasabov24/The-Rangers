@@ -1,118 +1,119 @@
 /* Global Styles */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Bookman Old Style', serif;
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Bookman Old Style', serif; /* Използва шрифт Bookman Old Style за текстовете */
 }
 
 body {
-    background-color: #1a5276;
-    color: #333;
-    line-height: 1.6;
-    min-height: 100vh; /* Ensures body takes full viewport height */
+    background-color: #1a5276; /* Дълбок син фон за цялата страница */
+    color: #333; /* Тъмен цвят за текста, за да е лесен за четене */
+    line-height: 1.6; /* Височина на реда за по-добра четимост */
+    min-height: 100vh; /* Минималната височина на body е 100% от височината на екрана */
 }
 
 /* Header */
-#header header {
-    background-color: #1a5276;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+header {
+    background-color: #1a5276; /* Дълбок син фон за хедъра */
+    color: #ffffff; /* Бял цвят на текста в хедъра */
+    padding: 20px 0; 
+    text-align: center; /* Центрира текста в хедъра */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лека сянка под хедъра */
 }
 
 header h1 {
-    font-size: 3.5em;
-    margin: 0;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    font-size: 3.5em; /* Размер на шрифта за заглавието */
+    margin: 0; 
+    font-weight: bold; /* Дебел шрифт за заглавието */
+    letter-spacing: 1px; /* Леко разстояние между буквите */
+    text-transform: uppercase; /* Преобразува текста в главни букви */
 }
 
 /* Navigation */
 nav {
-    background-color: #ffffff;
-    text-align: center;
-    padding: 12px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #1a5276; /* Дълбок син фон за навигационната лента */
+    text-align: center; /* Центрира навигационните линкове */
+    padding: 12px 0; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Лека сянка под навигацията */
 }
 
 nav a {
-    color: #1a5276;
-    font-size: 1.5em;
-    padding: 10px 25px;
-    margin: 0 15px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: white; /* Бял текст за линковете в навигацията */
+    font-size: 1.5em; /* Размер на шрифта за линковете */
+    padding: 10px 25px; 
+    margin: 0 15px; /* Разстояние между линковете */
+    text-decoration: none; /* Премахва подчертаването на линковете */
+    display: inline-block; /* Използва inline блокове за линковете */
+    text-transform: uppercase; /* Преобразува текстовете на линковете в главни букви */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Плавни преходи при промяна на фона и трансформация на линковете */
 }
 
 nav a:hover {
-    background-color: #bebfc0;
-    border-radius: 5px;
-    text-decoration: underline;
-    transform: translateY(-2px);
+    background-color: #bebfc0; /* Светлосив фон при hover */
+    border-radius: 5px; /* Закръглени ъгли за линковете при hover */
+    text-decoration: underline; /* Подчертаване на линковете при hover */
+    transform: translateY(-2px); /* Леко повдигане на линковете при hover */
 }
 
 /* Contact Info */
 #contact-info {
-    padding: 40px;
-    text-align: center;
-    background-color: white;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px; 
+    text-align: center; /* Центрира текста в секцията */
+    background-color: white; /* Бял фон за секцията */
+    margin: 20px; 
+    border-radius: 10px; /* Закръглени ъгли на контейнера */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Лека сянка под секцията */
 }
 
 #contact-info p {
-    font-size: 1.5em;
-    margin: 20px 0;
-    color: #333;
+    font-size: 1.5em; /* Размер на шрифта за текста */
+    margin: 20px 0; 
+    color: #333; /* Тъмен цвят за текста */
 }
 
 #contact-info a {
-    color: #ff6347;
-    text-decoration: none;
-    font-weight: bold;
+    color: #ff6347; /* Томатен цвят за линковете */
+    text-decoration: none; /* Премахва подчертаването на линковете */
+    font-weight: bold; /* Дебел шрифт за линковете */
 }
 
 #contact-info a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Подчертаване на линковете при hover */
 }
 
 /* Footer */
 footer {
-    background-color: #222;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: 30px;
+    background-color: #222; /* Тъмен фон за футъра */
+    color: white; /* Бял текст в футъра */
+    padding: 20px; 
+    text-align: center; /* Центриране на текста */
+    margin-top: 30px; 
 }
 
 footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 1em;
+    color: white; /* Бял цвят на линковете в футъра */
+    text-decoration: none; /* Премахва подчертаването на линковете */
+    margin: 0 10px; /* Разстояние между линковете */
+    font-size: 1em; /* Размер на шрифта за линковете */
 }
 
 footer a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Подчертаване на линковете при hover */
 }
 
 /* Media Queries */
 @media only screen and (max-width: 768px) {
     header h1 {
-        font-size: 2.2em;
+        font-size: 2.2em; /* Намаляване на размера на заглавието на хедъра за мобилни устройства */
     }
 
     nav a {
-        font-size: 1.2em;
-        padding: 10px 20px;
+        font-size: 1.2em; /* Намаляване на размера на шрифта на линковете в навигацията */
+        padding: 10px 20px; /* Намаляване на отстоянията около линковете */
     }
 
     #contact-info p {
-        font-size: 1.2em;
+        font-size: 1.2em; /* Намаляване на размера на шрифта на текста в секцията за контакти */
     }
 }

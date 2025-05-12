@@ -1,173 +1,201 @@
-/* Global Styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Bookman Old Style', serif;
+/* Reset & Base Styles */
+*, *::before, *::after {
+    margin: 0; /* Премахва всички отстояния от елементите */
+    padding: 0; /* Премахва всички вътрешни отстояния */
+    box-sizing: border-box; 
 }
 
+:root {
+    --primary-bg: #f5f6fa; /* Светъл фон за основната страница */
+    --header-bg: #1a5276; /* Тъмносин фон за хедъра */
+    --text-color: #222; /* Тъмен цвят на текста за добра четимост */
+    --white: #fff; /* Бял цвят */
+    --btn-primary: #ff6347; /* Томатен цвят за основни бутони */
+    --btn-hover: #e5533d; /* По-тъмен червен цвят при hover на бутоните */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1); /* Лека сянка */
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.2); /* Средна сянка */
+    --transition: 0.2s ease; /* Плавен преход за анимации */
+    --radius: 12px; /* Закръглени ъгли за елементите */
+    --max-width: 1200px; /* Максимална ширина на основното съдържание */
+    --side-padding: 20px; /* Отстояния по страните на съдържанието */
+}
+
+/* Body */
 body {
-    background-color: #1a5276; 
-    color: #333; 
-    line-height: 1.6;
-    min-height: 100vh; /* Ensures body takes full viewport height */
+    font-family: 'Segoe UI', system-ui, sans-serif; /* Използвана шрифтова семейство за тялото */
+    background-color: var(--primary-bg); /* Задава фон */
+    color: var(--text-color); /* Цвят на текста */
+    line-height: 1.6; /* Височина на реда за по-добра четимост */
+    min-height: 100vh; /* Минимална височина на тялото за да запълни екрана */
+    font-size: 1rem; /* Основен размер на шрифта */
+    letter-spacing: 0.5px; /* Малко разстояние между буквите */
+    padding: 0; /* Няма отстояния за тялото */
+    box-sizing: border-box; /* Показва padding и border в размера на елементите */
+    margin: 0; /* Премахва маргините по подразбиране */
 }
 
 /* Header */
 header {
-    background-color: #1a5276;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--header-bg); /* Цветът на фона на хедъра */
+    color: var(--white); /* Цвят на текста в хедъра */
+    padding: 20px 0; /* Отстояние отгоре и отдолу за хедъра */
+    text-align: center; /* Центрира текста */
+    box-shadow: var(--shadow-sm); /* Добавя лека сянка */
+    position: sticky; /* Хедърът остава на върха при скрол */
+    top: 0; /* Прилиза върху останалото съдържание */
+    z-index: 100; /* Приоритет в подреждането */
 }
 
 header h1 {
-    font-size: 3.5em; /* Slightly larger for impact */
-    margin: 0;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase; /* Adds emphasis */
+    font-size: clamp(2.5rem, 6vw, 3.5rem); /* Адаптивен размер на шрифта на заглавието */
+    letter-spacing: 1px; /* Леко разстояние между буквите */
+    font-weight: 700; /* Дебел шрифт за заглавието */
+    text-transform: uppercase; /* Всички букви ще са главни */
+    margin-bottom: 1rem; /* Отстояние отдолу */
+}
+
+header p {
+    font-size: 1.1rem; /* Размер на текста в параграфа */
+    margin-top: 0.5rem; /* Отстояние отгоре за параграфа */
 }
 
 /* Navigation */
 nav {
-    background-color: #ffffff;
-    text-align: center;
-    padding: 12px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--white); /* Бял фон за навигацията */
+    display: flex; /* Използва flexbox за подреждане */
+    justify-content: center; /* Центрира елементите по хоризонтала */
+    gap: 20px; /* Разстояние между елементите */
+    padding: 15px 0; /* Отстояния отгоре и отдолу */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лека сянка под навигацията */
 }
 
 nav a {
-    color: #1a5276;
-    font-size: 1.5em;
-    padding: 10px 25px;
-    margin: 0 15px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: var(--header-bg); /* Цвят на текстовете на линковете */
+    font-size: 1.2em; /* Размер на шрифта на линковете */
+    font-weight: 600; /* Дебел шрифт за линковете */
+    text-transform: uppercase; /* Всички букви ще са главни */
+    padding: 10px 25px; /* Отстояния около текста */
+    text-decoration: none; /* Премахва подчертаването */
+    transition: background-color 0.2s ease, transform 0.2s ease; /* Плавен преход при hover */
+    border-radius: 5px; /* Закръглени ъгли на линковете */
 }
 
 nav a:hover {
-    background-color: #bebfc0;
-    border-radius: 5px;
-    text-decoration: underline;
-    transform: translateY(-2px); /* Adds a slight lift effect */
+    background-color: #e0e0e0; /* Светлосив фон при hover */
+    transform: translateY(-2px); /* Леко премества линка нагоре при hover */
 }
 
-/* Main Section */
+
 main {
-    padding: 40px 10px;
+    padding: 40px 20px; 
+    max-width: var(--max-width); /* Максимална ширина на съдържанието */
+    margin: 0 auto; /* Центрира основното съдържание */
 }
 
-/* Car List Section */
+
 #car-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    margin-top: 20px;
+    display: flex; /* Използва flexbox за подреждане на колите */
+    flex-wrap: wrap; /* Разрешава пренасочване на елементите */
+    gap: 30px; /* Разстояние между картинките на колите */
+    justify-content: space-between; /* Разпределя равномерно елементите */
+    margin-top: 20px; 
+    max-width: 100%; /* Задължава да запълни ширината на родителя */
 }
 
 #car-list h2 {
-    width: 100%;
-    font-size: 2.5em;
-    text-align: center;
-    margin-bottom: 40px;
-    color: #fff;
+    width: 100%; /* Ширината е 100% */
+    font-size: 2.5em; /* Размер на шрифта */
+    text-align: center; /* Центрира текста */
+    margin-bottom: 40px; 
+    color: var(--header-bg); /* Цветът на текста */
 }
 
-/* Car Card */
+
 .car {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 300px;
-    text-decoration: none;
-    color: inherit;
+    background-color: var(--white); /* Бял фон на картата */
+    border-radius: 12px; /* Закръглени ъгли на картата */
+    box-shadow: var(--shadow-sm); /* Лека сянка */
+    text-align: center; /* Центрира съдържанието на картата */
+    padding: 20px; 
+    width: 300px; /* Ширина на картата */
+    text-decoration: none; /* Премахва подчертаването */
+    color: inherit; /* Запазва цвета на текста */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Плавен преход за анимации */
+    cursor: pointer; /* Подсказва, че е кликаемо */
+    overflow: hidden; /* Превенция за излизане на съдържанието извън картата */
+    margin: 0 10px; /* Разстояние между картите */
 }
 
 .car:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Леко повдигане на картата при hover */
+    box-shadow: var(--shadow-md); /* По-голяма сянка при hover */
 }
 
 .car h3 {
-    font-size: 1.8em;
-    margin: 15px 0;
-    color: #333;
+    font-size: 1.8em; /* Размер на шрифта на заглавието в картата */
+    margin: 15px 0; 
+    color: var(--text-color); /* Цветът на заглавието */
 }
 
 .car img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    object-fit: cover;
+    width: 100%; /* Ширина на картинката на 100% */
+    height: auto; /* Автоматична височина на картинката */
+    border-radius: 8px; /* Закръглени ъгли на картинката */
+    margin-bottom: 15px; 
+    object-fit: cover; /* Пропорционално изрязване на изображението */
+    transition: transform 0.2s ease; /* Плавен преход при увеличаване */
 }
 
+.car:hover img {
+    transform: scale(1.05); /* Увеличаване на картинката при hover */
+}
+
+/* Price Text */
 .car p {
-    font-size: 1.2em;
-    color: #04c007;
-    font-weight: bold;
+    font-size: 1.2em; /* Размер на шрифта */
+    color: #04c007; /* Зелен цвят за цената */
+    font-weight: bold; /* Дебел шрифт за цената */
 }
 
-/* Gallery */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 15px;
-}
 
-.gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-}
-
-/* Footer */
 footer {
-    background-color: #222;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: 30px;
+    background-color: #222; /* Тъмен фон за футъра */
+    color: var(--white); /* Бял текст */
+    padding: 20px; /* Отстояния около текста в футъра */
+    text-align: center; /* Центриране на текста */
+    margin-top: 30px; /* Отстояние отгоре */
 }
 
 footer p {
-    font-size: 1.1em;
+    font-size: 1.1em; /* Размер на текста */
 }
 
-/* Media Queries */
+
 @media only screen and (max-width: 768px) {
     header h1 {
-        font-size: 2.2em;
+        font-size: 2.2em; /* По-малък размер на заглавието на хедъра за мобилни устройства */
+    }
+
+    nav {
+        flex-direction: column; /* Пренарежда навигацията вертикално */
     }
 
     nav a {
-        font-size: 1.2em;
-        padding: 10px 20px;
+        font-size: 1.1em; /* Малко намаляване на размера на текста в навигацията */
+        padding: 12px 25px; /* Малко по-малко отстояние за мобилни устройства */
     }
 
     #car-list {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Пренарежда картите вертикално */
+        align-items: center; /* Центрира картите */
     }
 
     .car {
-        width: 80%;
+        width: 80%; /* Ширината на картите е 80% от екрана */
+        margin: 10px 0; 
     }
 
     #car-list h2 {
-        font-size: 2.2em;
+        font-size: 2.2em; /* По-малък размер на заглавието на мобилни устройства */
     }
 }

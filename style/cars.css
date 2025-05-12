@@ -1,238 +1,251 @@
-/* Reset & Base Styles */
+/* Задаване на нулеви стойности за margin, padding и box-sizing за всички елементи */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Включва padding и border в ширината и височината на елементите */
 }
 
+/* Основни променливи за цветовете, шрифтовете и други стойности */
 :root {
-    --primary-bg: #f5f6fa; /* Light, modern background */
-    --header-bg: #1a5276; /* Elegant deep blue */
-    --text-color: #222; /* Dark text for good contrast */
-    --white: #fff;
-    --btn-primary: #1a5276; /* Blue for main buttons */
-    --btn-hover: #154360; /* Darker blue on hover */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.2);
-    --transition: 0.3s ease;
-    --radius: 12px; /* Rounded corners */
-    --max-width: 1200px; /* Max width for main content */
+    --primary-bg: #f5f6fa; /* Лек, модерен фон за основната страница */
+    --header-bg: #1a5276; /* Тъмносиньо за хедъра (горната част на страницата) */
+    --text-color: #222; /* Тъмен текст за добър контраст и четливост */
+    --white: #fff; /* Бял цвят, използван за фон или текст */
+    --btn-primary: #1a5276; /* Основен синьо-сив цвят за бутоните */
+    --btn-hover: #154360; /* Малко по-тъмно синьо за ефект на hover върху бутоните */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1); /* Лека сянка за елементи */
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.2); /* Средно тъмна сянка за по-голям ефект */
+    --transition: 0.3s ease; /* Плавни преходи за ефектите */
+    --radius: 12px; /* Закръглени ъгли на елементите */
+    --max-width: 1200px; /* Максимална ширина за основното съдържание */
 }
 
+/* Основни стилове за тялото на страницата */
 body {
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    background-color: var(--primary-bg);
-    color: var(--text-color);
-    line-height: 1.6;
-    min-height: 100vh;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif; /* Шрифт за тялото на текста */
+    background-color: var(--primary-bg); /* Фон на страницата */
+    color: var(--text-color); /* Цвета на текста */
+    line-height: 1.6; /* Между редова височина за по-добра четливост */
+    min-height: 100vh; /* Минимална височина на тялото  */
+    font-size: 1rem; /* Размер на шрифта */
+    letter-spacing: 0.5px; /* Разстояние между буквите */
+    padding: 0; 
+    box-sizing: border-box; /* Включване на padding и border в общата ширина и височина на елементите */
 }
 
-/* Header */
+/* Стилове за хедъра */
 header {
-    background-color: var(--header-bg);
-    color: var(--white);
-    padding: 2rem;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--header-bg); /* Тъмносин фон за хедъра */
+    color: var(--white); /* Бял цвят за текста в хедъра */
+    padding: 30px 0; 
+    text-align: center; /* Центриране на текста */
+    box-shadow: var(--shadow-sm); /* Лека сянка за хедъра */
+    position: sticky; /* Хедърът остава на мястото си, когато скролваш */
+    top: 0; /* Разположен в горната част на екрана */
+    z-index: 100; 
 }
 
 header h1 {
-    font-size: clamp(2.5rem, 6vw, 3.5rem);
-    letter-spacing: 1px;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 6vw, 3.5rem); /* Размер на шрифта, който се адаптира към размера на екрана */
+    letter-spacing: 1px; /* Разстояние между буквите */
+    font-weight: 700; /* Дебелина на шрифта */
+    text-transform: uppercase; /* Преобразуване на текста в главни букви */
+    margin-bottom: 1rem; 
 }
 
 header p {
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
+    font-size: 1.1rem; /* Размер на шрифта за параграфите */
+    margin-top: 0.5rem; 
 }
 
-/* Navigation */
+/* Стилове за навигационното меню */
 nav {
-    margin-top: 1.5rem;
+    background-color: var(--white); /* Бял фон за навигацията */
+    display: flex; /* Използваме flexbox за подреждане на елементите */
+    justify-content: center; /* Центриране на линковете */
+    gap: 20px; /* Разстояние между линковете */
+    padding: 15px 0; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лека сянка под навигацията */
 }
 
 nav a {
-    color: var(--white);
-    margin: 0 1.5rem;
-    text-decoration: none;
-    font-size: 1.15rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: color var(--transition);
+    color: var(--header-bg); 
+    font-size: 1.2em; /* Размер на шрифта за линковете */
+    font-weight: 600; 
+    text-transform: uppercase; /* Преобразуване на текста в главни букви */
+    padding: 10px 25px; 
+    text-decoration: none; /* Премахване на подчертаването на линковете */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Преходи за hover ефектите */
+    border-radius: 5px; /* Закръглени ъгли на линковете */
 }
 
 nav a:hover {
-    color: #f5a623; /* Gold highlight on hover */
+    background-color: #e0e0e0; /* Светло сив фон при hover */
+    transform: translateY(-2px); /* Леко изместване на линка нагоре при hover */
 }
 
-/* Main Content */
+/* Стилове за основното съдържание на страницата */
 main {
-    padding: 2.5rem 1.5rem;
-    max-width: var(--max-width);
-    margin-inline: auto;
-    background: var(--white);
-    box-shadow: var(--shadow-md);
-    border-radius: var(--radius);
+    padding: 2.5rem 1.5rem; /* Отстояния около основното съдържание */
+    max-width: var(--max-width); /* Максимална ширина */
+    margin-inline: auto; /* Центриране на съдържанието */
+    background: var(--white); /* Бял фон */
+    box-shadow: var(--shadow-md); /* Средна сянка около съдържанието */
+    border-radius: var(--radius); /* Закръглени ъгли на съдържанието */
 }
 
-/* Car Info Section */
+/* Стилове за раздела с информация за колата */
 #car-details {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    margin-bottom: 2rem;
-    transition: box-shadow var(--transition);
+    background: var(--white); /* Бял фон за детайлите на колата */
+    padding: 2rem; /* Отстояния около детайлите */
+    border-radius: var(--radius); /* Закръглени ъгли */
+    box-shadow: var(--shadow-sm); /* Лека сянка */
+    margin-bottom: 2rem; /* Отстояние отдолу */
+    transition: box-shadow var(--transition); /* Преход при промяна на сянката */
 }
 
 #car-details:hover {
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-md); /* По-силна сянка при hover */
 }
 
 #car-details h2 {
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
-    margin-bottom: 1.5rem;
-    text-align: center;
-    font-weight: 600;
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Размер на шрифта за заглавието */
+    margin-bottom: 1.5rem; /* Отстояние отдолу */
+    text-align: center; /* Центриране на заглавието */
+    font-weight: 600; /* Дебелина на шрифта */
 }
 
 .car-info {
-    text-align: center;
+    text-align: center; /* Центриране на информацията за колата */
 }
 
 .car-info img {
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--radius);
-    margin-bottom: 1.5rem;
-    box-shadow: var(--shadow-sm);
-    transition: transform var(--transition), box-shadow var(--transition);
+    max-width: 100%; /* Изображението не излиза извън границите си */
+    height: auto; /* Автоматична височина, за да запази пропорциите */
+    border-radius: var(--radius); /* Закръглени ъгли на изображението */
+    margin-bottom: 1.5rem; /* Отстояние отдолу */
+    box-shadow: var(--shadow-sm); /* Лека сянка върху изображението */
+    transition: transform var(--transition), box-shadow var(--transition); /* Преходи при hover */
 }
 
 .car-info img:hover {
-    transform: scale(1.05); /* Zoom effect */
-    box-shadow: var(--shadow-md);
+    transform: scale(1.05); /* Леко увеличение на изображението при hover */
+    box-shadow: var(--shadow-md); /* По-силна сянка при hover */
 }
 
 .car-info p {
-    font-size: 1.2rem;
-    margin: 1rem 0;
-    line-height: 1.8;
+    font-size: 1.2rem; /* Размер на шрифта за параграфите */
+    margin: 1rem 0; /* Отстояния отгоре и отдолу */
+    line-height: 1.8; /* Между редова височина */
 }
 
 .car-info ul {
-    text-align: left;
-    margin: 1.5rem auto;
-    max-width: 650px;
-    padding-left: 1.5rem;
+    text-align: left; /* Линейна подредба на списъка */
+    margin: 1.5rem auto; /* Центриране и отстояние отгоре и отдолу */
+    max-width: 650px; /* Максимална ширина на списъка */
+    padding-left: 1.5rem; 
 }
 
 .car-info li {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+    margin-bottom: 1rem; /* Отстояние между елементите в списъка */
+    font-size: 1.1rem; /* Размер на шрифта за елементите */
 }
 
-/* Gallery */
+/* Галерия */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Автоматично разпределение на изображенията в колони */
+    gap: 1.5rem; /* Разстояние между изображенията */
+    margin: 2rem 0; /* Отстояния отгоре и отдолу */
 }
 
 .gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: var(--radius);
-    transition: transform var(--transition);
-    box-shadow: var(--shadow-md);
-    aspect-ratio: 16/9;
-    object-fit: cover;
+    width: 100%; /* Изображенията заемат цялата ширина на клетката */
+    height: auto; /* Автоматична височина */
+    border-radius: var(--radius); /* Закръглени ъгли */
+    transition: transform var(--transition); /* Преходи при hover */
+    box-shadow: var(--shadow-md); /* сянка */
+    aspect-ratio: 16/9; /* Стандартно съотношение на изображението */
+    object-fit: cover; 
 }
 
 .gallery img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Леко увеличение на изображението при hover */
 }
 
-/* Buttons */
+/* Основни бутони */
 .btn {
     display: inline-block;
-    padding: 1rem 2.5rem;
-    text-decoration: none;
-    border-radius: var(--radius);
-    font-size: 1.2rem;
-    transition: background-color var(--transition);
-    cursor: pointer;
-    font-weight: 600;
-    text-align: center;
+    padding: 1rem 2.5rem; /* Отстояния около бутоните */
+    text-decoration: none; /* Премахване на подчертаването на линковете */
+    border-radius: var(--radius); /* Закръглени ъгли на бутоните */
+    font-size: 1.2rem; /* Размер на шрифта на бутоните */
+    transition: background-color var(--transition); /* Преход при hover за цвета на фона */
+    cursor: pointer; /* Ръка при hover */
+    font-weight: 600; /* Дебелина на шрифта */
+    text-align: center; /* Центриране на текста в бутона */
 }
 
 .btn-book {
-    background-color: var(--btn-primary);
-    color: var(--white);
+    background-color: var(--btn-primary); /* Син фон за основния бутон */
+    color: var(--white); /* Бял текст */
 }
 
 .btn-book:hover {
-    background-color: var(--btn-hover);
+    background-color: var(--btn-hover); /* Тъмно синьо при hover */
 }
 
 .btn-book:active {
-    background-color: darken(var(--btn-hover), 10%);
+    background-color: darken(var(--btn-hover), 10%); /* Малко по-тъмно синьо при натискане на бутона */
 }
 
-/* Utility Classes */
+/* Утилити класове */
 .text-center {
-    text-align: center;
+    text-align: center; /* Центриране на текста */
 }
 
 .mb-1 {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; /* Отстояние отдолу */
 }
 
-/* Footer */
+/* Стилове за футъра (долната част на страницата) */
 footer {
-    background-color: #333;
-    color: var(--white);
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 2rem;
-    font-size: 1rem;
+    background-color: #222; /* Тъмно сив фон */
+    color: var(--white); /* Бял текст */
+    padding: 20px; /* Отстояния */
+    text-align: center; /* Центриране на текста */
+    margin-top: 30px; /* Отстояние отгоре */
 }
 
 footer p {
-    margin: 0;
+    font-size: 1.1em; /* Размер на шрифта за текста в футъра */
 }
 
-/* Responsive Design */
+/* Медийни заявки за адаптация към по-малки екрани */
 @media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2em; /* По-малък размер на шрифта за заглавието на хедъра */
+    }
+
+    nav {
+        flex-direction: column; /* Подреждане на линковете вертикално */
+    }
+
     nav a {
-        display: block;
-        margin: 1rem 0;
+        font-size: 1.1em; /* По-малък размер на шрифта за линковете */
+        padding: 12px 25px; /* По-малки отстояния за линковете */
     }
 
-    .gallery {
-        grid-template-columns: 1fr;
+    #booking-form h2 {
+        font-size: 1.8em; /* По-малък размер на заглавието на формата */
     }
 
-    #car-details {
-        padding: 1.5rem;
+    form input, form select, form button {
+        font-size: 1.1em; /* По-голям размер на шрифта за полетата и бутоните */
+        padding: 10px; /* По-малки отстояния за полетата и бутоните */
+    }
+
+    form input[type="number"], form input[type="date"] {
+        width: 100%; /* Полетата да заемат цялата ширина */
     }
 }
-
-@media (hover: none) {
-    .gallery img:hover {
-        transform: none;
-    }
-}
-

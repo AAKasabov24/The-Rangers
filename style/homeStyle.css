@@ -1,223 +1,276 @@
-/* Global Styles */
-* {
+/* Основни настройки за стилизиране на елементите */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif; /* Clear, readable font */
 }
 
-/* Body */
+/* Променливи за основни цветове и размери */
+:root {
+    --primary-bg: #f5f6fa; /* Основен фон за страницата */
+    --header-bg: #1a5276; /* Фон на хедъра */
+    --text-color: #222; /* Основен цвят на текста */
+    --white: #fff; /* Бял цвят */
+    --btn-primary: #ff6347; /* Основен цвят за бутоните */
+    --btn-hover: #e5533d; /* Цвят при задържане на бутона */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1); /* Лека сянка */
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.2); /* По-голяма сянка */
+    --transition: 0.3s ease; /* Време за преходите */
+    --radius: 12px; /* Заобляне на ъглите */
+    --max-width: 1200px; /* Максимална ширина на контейнерите */
+}
+
+/* Стилове за основния body елемент */
 body {
-    background-color: #f4f4f4; /* Light gray background */
-    color: #333; /* Dark text for readability */
-    line-height: 1.6; /* For better readability */
+    font-family: 'Segoe UI', system-ui, sans-serif; /* Шрифт за тялото */
+    background-color: var(--primary-bg); /* Основен фон */
+    color: var(--text-color); /* Основен цвят на текста */
+    line-height: 1.6; /* Височина на редовете */
+    min-height: 100vh; /* Минимална височина на страницата */
+    font-size: 1rem; /* Размер на шрифта */
+    letter-spacing: 0.5px; 
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header */
+/* Стилове за хедъра */
 header {
-    background-color: #1a5276; /* Deep blue background */
-    color: white; /* White text for contrast */
-    padding: 20px;
-    text-align: center;
+    background-color: var(--header-bg); /* Фон на хедъра */
+    color: var(--white); /* Цвят на текста */
+    padding: 3rem 2rem; /* Отстояние около съдържанието */
+    text-align: center; /* Центриране на текста */
+    box-shadow: var(--shadow-sm); /* Лека сянка */
+    position: sticky; /* Хедърът да остава на място при скрол */
+    top: 0;
+    z-index: 100;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.1); /* Лека линия отдолу */
 }
 
 header h1 {
-    font-size: 2.5em; /* Large text size */
-    margin-bottom: 10px;
+    font-size: clamp(3.5rem, 7vw, 4.5rem); /* размер на шрифта */
+    letter-spacing: 1px; 
+    font-weight: 700; /* Тежест на шрифта */
+    text-transform: uppercase; /* Превръща текста в главни букви */
+    margin-bottom: 1.5rem; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Сенки за заглавието */
 }
 
-/* Navigation */
+/* Навигационни връзки */
+nav {
+    background-color: var(--white); /* Фон на навигацията */
+    display: flex;
+    justify-content: center; /* Центриране на линковете */
+    gap: 50px; 
+    padding: 18px 2rem; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Лека сянка */
+    position: relative;
+    width: 100%;
+}
+
+/* Линия под навигацията */
+nav::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 3px;
+    background-color: var(--header-bg);
+}
+
+/* Стилове за навигационните линкове */
 nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
+    color: var(--header-bg); /* Цвят на линковете */
+    font-size: 1.3rem; /* Размер на шрифта */
+    font-weight: 600; /* Тегло на шрифта */
+    text-transform: uppercase; /* Превръща текста в главни букви */
+    padding: 15px 30px; 
+    text-decoration: none; /* Без подчертаване */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавен преход за ефекти */
+    border-bottom: 3px solid transparent; /* Прозрачен бордер */
 }
 
+/* Ховър ефект за линковете */
 nav a:hover {
-    color: #ff6347; /* Change to red on hover */
+    background-color: #e0e0e0; /* Сив фон при ховър */
+    color: var(--header-bg); /* Променя цвета на текста */
+    border-color: var(--header-bg); /* Променя бордера */
+    transform: translateY(-3px); /* Премества линка нагоре */
 }
 
-/* Intro Section */
+/* Специална оферта */
+#special-deal {
+    background-color: #ff6347; /* Червен фон за офертата */
+    color: var(--white); /* Бял цвят на текста */
+    padding: 3rem 2rem; 
+    text-align: center; /* Центриране на текста */
+    border-radius: var(--radius); /* Заоблени ъгли */
+    box-shadow: var(--shadow-md); /* По-силна сянка */
+    margin: 2rem 0; 
+}
+
+#special-deal h3 {
+    font-size: 2.8rem; /* Размер на заглавието */
+    font-weight: 700; /* Тежест на шрифта */
+    margin-bottom: 1.5rem; 
+    text-transform: uppercase; /* Превръща в главни букви */
+}
+
+#special-deal p {
+    font-size: 1.4rem; /* Размер на текста */
+    margin-bottom: 2rem; 
+}
+
+/* Стилове за бутона */
+#special-deal .btn-primary {
+    background-color: var(--white); /* Бял фон за бутона */
+    color: var(--header-bg); /* Цветът на текста */
+    padding: 1.2rem 3rem; /* Размери на бутона */
+    border-radius: var(--radius); /* Заоблени ъгли */
+    font-size: 1.4rem; /* Размер на шрифта */
+    text-decoration: none; /* Без подчертаване */
+    font-weight: 600; /* Тегло на шрифта */
+    text-transform: uppercase; /* Превръща текста в главни букви */
+    transition: background-color 0.3s ease; /* Плавен преход при ховър */
+}
+
+#special-deal .btn-primary:hover {
+    background-color: var(--btn-hover); /* Променя цвета на фона при ховър */
+    color: var(--white); /* Променя цвета на текста */
+}
+
+/* Начално въведение за сайта */
 #home-intro {
-    background-color: #ffffff;
-    padding: 40px;
-    text-align: center;
+    background-color: var(--primary-bg); /* Светъл фон */
+    padding: 7rem 4rem; 
+    text-align: center; /* Центриране на текста */
+    box-shadow: var(--shadow-sm); /* Лека сянка */
+    border-radius: var(--radius); /* Заоблени ъгли */
 }
 
-#home-intro h2 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
+#home-intro .intro-container h2 {
+    font-size: 3.5rem; /* Размер на заглавието */
+    margin-bottom: 2rem; /* Отстояние отдолу */
+    font-weight: 700; /* Тегло на шрифта */
+    text-transform: uppercase; /* Превръща в главни букви */
+    color: var(--header-bg); /* Цвят на заглавието */
 }
 
-#home-intro p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+#home-intro .intro-container p {
+    font-size: 1.4rem; /* Размер на текста */
+    margin-bottom: 4rem; /* Отстояние отдолу */
 }
 
-#home-intro .btn-primary {
-    background-color: #1a5276;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease;
+/* Стилове за бутона */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--btn-primary); /* Цветът на бутона */
+    color: var(--white); /* Цвят на текста */
+    padding: 1.3rem 3.5rem; /* Размери на бутона */
+    font-size: 1.4rem; /* Размер на шрифта */
+    border-radius: var(--radius); /* Заоблени ъгли */
+    text-decoration: none; /* Без подчертаване */
+    transition: background-color var(--transition); /* Плавен преход */
+    font-weight: 600; /* Тегло на шрифта */
+    text-transform: uppercase; /* Превръща текста в главни букви */
 }
 
-#home-intro .btn-primary:hover {
-    background-color: #0a3d63; /* Darker blue when hovered */
+.btn-primary:hover {
+    background-color: var(--btn-hover); /* Променя фона при ховър */
 }
 
-/* Services Section */
+/* Секция за услуги */
 #services {
-    padding: 40px;
-    background-color: #e9ecef; /* Light gray background */
-    text-align: center;
+    padding: 7rem 4rem; /* Отстояния около съдържанието */
+    background-color: var(--white); /* Бял фон */
 }
 
 #services h2 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
+    font-size: 3.5rem; /* Размер на заглавието */
+    margin-bottom: 3.5rem; /* Отстояние отдолу */
+    text-align: center; /* Центриране на заглавието */
+    font-weight: 700; /* Тегло на шрифта */
+    color: var(--header-bg); /* Цвят на заглавието */
 }
 
 .services-container {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Създаване на мрежа за услуги */
+    gap: 4rem; 
 }
 
 .service {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 30%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 2.5rem; /* Отстояния около съдържанието */
+    background-color: var(--primary-bg); /* Светъл фон */
+    border-radius: var(--radius); /* Заоблени ъгли */
+    box-shadow: var(--shadow-sm); /* Лека сянка */
+    transition: box-shadow var(--transition); /* Плавен преход за сянка */
+    border: 1px solid #e0e0e0; /* Лека линия около всяка услуга */
 }
 
 .service:hover {
-    transform: translateY(-5px); /* Lift the card on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-md); /* По-силна сянка при ховър */
 }
 
 .service h3 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
+    font-size: 2.2rem; /* Размер на заглавието на услугата */
+    margin-bottom: 1.8rem; 
+    font-weight: 600; /* Тегло на шрифта */
+    color: var(--header-bg); /* Цвят на заглавието */
 }
 
 .service p {
-    font-size: 1em;
+    font-size: 1.3rem; /* Размер на текста */
+    line-height: 1.8; /* Височина на реда */
+    color: var(--text-color); /* Цветът на текста */
 }
 
-/* Testimonials Section */
+/* Отзиви от клиенти */
 #testimonials {
-    padding: 40px;
-    background-color: #ffffff;
-    text-align: center;
-}
-
-#testimonials h2 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
+    background-color: var(--primary-bg); /* Светъл фон */
+    padding: 4rem 2rem; 
 }
 
 .testimonial-container {
     display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+    flex-direction: column;
+    gap: 2rem; 
+    align-items: center; /* Центриране на отзивите */
 }
 
 .testimonial {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    width: 45%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Центриране на текста */
+    font-size: 1.4rem; /* Размер на шрифта */
+    font-style: italic; 
+    color: var(--text-color); /* Цвят на текста */
 }
 
-.testimonial p {
-    font-size: 1.1em;
-    font-style: italic;
-}
-
-.testimonial strong {
+.testimonial p strong {
     display: block;
-    margin-top: 10px;
-    font-weight: bold;
+    font-weight: 700; /* Тегло на името */
+    color: var(--header-bg); /* Цвят на името */
 }
 
-/* Contact Section */
+/* Контактна секция */
 #contact {
-    padding: 40px;
-    background-color: #f4f4f4;
-    text-align: center;
+    padding: 4rem 2rem; 
+    background-color: var(--white); /* Бял фон */
+    text-align: center; /* Центриране на текста */
 }
 
 #contact h2 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
+    font-size: 3.5rem; /* Размер на заглавието */
+    margin-bottom: 2rem; 
+    font-weight: 700; /* Тегло на шрифта */
+    color: var(--header-bg); /* Цвят на заглавието */
 }
 
 #contact p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+    font-size: 1.4rem; /* Размер на текста */
+    margin-bottom: 2rem; /* Отстояние отдолу */
 }
 
 #contact .btn-primary {
-    background-color: #1a5276;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease;
-}
-
-#contact .btn-primary:hover {
-    background-color: #0a3d63;
-}
-
-/* Footer */
-footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-footer p {
-    font-size: 1em;
-}
-
-/* Responsive Media Queries */
-@media only screen and (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
-
-    nav a {
-        font-size: 1.1em;
-    }
-
-    .services-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .service {
-        width: 80%;
-        margin-bottom: 20px;
-    }
-
-    .testimonial-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .testimonial {
-        width: 80%;
-        margin-bottom: 20px;
-    }
+    font-size: 1.4rem; /* Размер на бутона */
+    padding: 1.2rem 3rem; /* Размери на бутона */
 }

@@ -1,230 +1,240 @@
-/* Global Styles */
-* {
+/* Reset & Base Styles */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif; /* Clear, readable font */
+    box-sizing: border-box; 
 }
 
-/* Body */
+/* Променливи за цветовете и стилизацията */
+:root {
+    --primary-bg: #f5f6fa; /* Светъл фон */
+    --header-bg: #1a5276; /* Тъмносин фон за хедъра */
+    --text-color: #222; /* Тъмен цвят за текста */
+    --white: #fff; /* Бял цвят */
+    --btn-primary: #1a5276; /* Синьо за основните бутони */
+    --btn-hover: #154360; /* По-тъмно синьо при hover ефект */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1); /* Лека сянка */
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.2); /* По-голяма сянка */
+    --transition: 0.3s ease; /* Плавни преходи */
+    --radius: 12px; /* Кръгли ъгли за елементите */
+    --max-width: 1200px; /* Максимална ширина на основното съдържание */
+}
+
+/* Стилове за основния body */
 body {
-    background-color: #f4f4f4; /* Light gray background */
-    color: #333; /* Dark text for readability */
-    line-height: 1.6; /* For better readability */
+    font-family: 'Segoe UI', system-ui, sans-serif; /* Шрифт за текста */
+    background-color: var(--primary-bg); /* Светъл фон */
+    color: var(--text-color); /* Цвят на текста */
+    line-height: 1.6; /* Височина на реда */
+    min-height: 100vh; /* Минимална височина на страницата */
+    font-size: 1rem; /* Размер на шрифта */
+    letter-spacing: 0.5px; /* Междуредово разстояние */
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header */
+/* Стилове за хедъра */
 header {
-    background-color: #2c3e50; /* Original deep blue */
-    color: white; /* White text for contrast */
-    padding: 20px;
-    text-align: center;
+    background-color: var(--header-bg); /* Тъмносин фон за хедъра */
+    color: var(--white); /* Бял текст */
+    padding: 2rem;
+    text-align: center; /* Центрирано съдържание */
+    box-shadow: var(--shadow-sm); /* Лека сянка */
+    position: sticky; /* Закрепен хедър при скролване */
+    top: 0;
+    z-index: 100; /* Висок z-index, за да е над останалото съдържание */
+    border-bottom: 4px solid rgba(0, 0, 0, 0.1); /* Лека линия отдолу */
 }
 
 header h1 {
-    font-size: 2.5em; /* Large text size */
-    margin-bottom: 10px;
+    font-size: clamp(2.5rem, 6vw, 3.5rem); /* Респонсив размер на шрифта */
+    letter-spacing: 1px;
+    font-weight: 700; /* Удебелен текст */
+    text-transform: uppercase; /* Всички букви с главни */
+    margin-bottom: 1rem;
 }
 
-/* Navigation */
+header p {
+    font-size: 1.1rem; /* Размер на шрифта за подзаглавие */
+    margin-top: 0.5rem;
+}
+
+/* Стилове за навигацията */
 nav {
-    background-color: #34495e; /* Darker blue for the nav bar */
-    display: flex;
-    justify-content: center;
-    padding: 12px 0;
+    margin-top: 1.5rem;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
+    color: var(--white); /* Бял текст за линковете */
+    margin: 0 1.5rem; /* Разстояние между линковете */
+    text-decoration: none; /* Без подчертаване */
+    font-size: 1.15rem; /* Размер на шрифта */
+    font-weight: 600; /* Умерено удебелен текст */
+    text-transform: uppercase; /* Всички букви с главни */
+    transition: color var(--transition), transform var(--transition); /* Плавен преход при hover */
 }
 
 nav a:hover {
-    color: #ff6347; /* Change to red on hover */
+    color: #f5a623; /* Златист цвят при hover */
+    transform: scale(1.1); /* Леко уголемяване при hover */
 }
 
-/* Intro Section */
-#home-intro {
-    background-color: #ffffff;
-    padding: 40px;
+/* Основно съдържание */
+main {
+    padding: 2.5rem 1.5rem;
+    max-width: var(--max-width); /* Максимална ширина */
+    margin-inline: auto; /* Центриране на съдържанието */
+    background: var(--white); /* Бял фон */
+    box-shadow: var(--shadow-md); /* Средна сянка */
+    border-radius: var(--radius); /* Кръгли ъгли */
+}
+
+/* Стилове за секцията с информация за колата */
+#car-details {
+    background: var(--white); /* Бял фон */
+    padding: 2rem;
+    border-radius: var(--radius); /* Кръгли ъгли */
+    box-shadow: var(--shadow-sm); /* Лека сянка */
+    margin-bottom: 2rem;
+    transition: box-shadow var(--transition); /* Плавен преход на сянката */
+}
+
+#car-details:hover {
+    box-shadow: var(--shadow-md); /* По-силна сянка при hover */
+}
+
+#car-details h2 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem); 
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.car-info {
     text-align: center;
 }
 
-#home-intro h2 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
+.car-info img {
+    max-width: 100%; /* Макс. ширина 100% от контейнера */
+    height: auto; /* Автоматична височина */
+    border-radius: var(--radius); /* Кръгли ъгли на снимката */
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm); /* Лека сянка около снимката */
+    transition: transform var(--transition), box-shadow var(--transition); /* Плавни преходи при hover */
 }
 
-#home-intro p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+.car-info img:hover {
+    transform: scale(1.05); /* Леко увеличение на снимката при hover */
+    box-shadow: var(--shadow-md); /* По-силна сянка при hover */
 }
 
-#home-intro .btn-primary {
-    background-color: #2c3e50; /* Original deep blue */
-    color: white;
-    padding: 15px 30px;
+.car-info p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    line-height: 1.8;
+}
+
+.car-info ul {
+    text-align: left;
+    margin: 1.5rem auto;
+    max-width: 650px; /* Максимална ширина на списъка */
+    padding-left: 1.5rem; 
+}
+
+.car-info li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Галерия */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 1.5rem; /* Разстояние между изображенията */
+    margin: 2rem 0;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius); /* Кръгли ъгли на снимката */
+    transition: transform var(--transition); /* Плавен преход при hover */
+    box-shadow: var(--shadow-md); /* Сянка около изображенията */
+    aspect-ratio: 16/9; /* Стандартно съотношение на изображенията */
+    object-fit: cover; /* Покрива целия контейнер */
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Леко уголемяване при hover */
+}
+
+/* Стилове за бутоните */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease;
-}
-
-#home-intro .btn-primary:hover {
-    background-color: #1a5276; /* Darker blue when hovered */
-}
-
-/* Services Section */
-#services {
-    padding: 40px;
-    background-color: #e9ecef; /* Light gray background */
+    border-radius: var(--radius);
+    font-size: 1.2rem;
+    transition: background-color var(--transition); /* преход за фона при hover */
+    cursor: pointer;
+    font-weight: 600;
     text-align: center;
 }
 
-#services h2 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
+.btn-book {
+    background-color: var(--btn-primary); /* Основен син цвят за бутоните */
+    color: var(--white);
 }
 
-.services-container {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+.btn-book:hover {
+    background-color: var(--btn-hover); /* Потъмняване при hover */
 }
 
-.service {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 30%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.btn-book:active {
+    background-color: darken(var(--btn-hover), 10%); /* Още по-тъмно при клик */
 }
 
-.service:hover {
-    transform: translateY(-5px); /* Lift the card on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
 
-.service h3 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-}
-
-.service p {
-    font-size: 1em;
-}
-
-/* Testimonials Section */
-#testimonials {
-    padding: 40px;
-    background-color: #ffffff;
+.text-center {
     text-align: center;
 }
 
-#testimonials h2 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
+.mb-1 {
+    margin-bottom: 1rem;
 }
 
-.testimonial-container {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.testimonial {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    width: 45%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial p {
-    font-size: 1.1em;
-    font-style: italic;
-}
-
-.testimonial strong {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-/* Contact Section */
-#contact {
-    padding: 40px;
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-#contact h2 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
-}
-
-#contact p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-#contact .btn-primary {
-    background-color: #2c3e50; /* Original deep blue */
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease;
-}
-
-#contact .btn-primary:hover {
-    background-color: #1a5276; /* Darker blue when hovered */
-}
-
-/* Footer */
+/* Стилове за футера */
 footer {
-    background-color: #222;
-    color: white;
+    background-color: #333; /* Тъмносив фон */
+    color: var(--white); /* Бял текст */
     text-align: center;
-    padding: 20px;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    font-size: 1rem;
 }
 
 footer p {
-    font-size: 1em;
+    margin: 0;
 }
 
-/* Responsive Media Queries */
-@media only screen and (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
 
+@media (max-width: 768px) {
     nav a {
-        font-size: 1.1em;
+        display: block;
+        margin: 1rem 0;
     }
 
-    .services-container {
-        flex-direction: column;
-        align-items: center;
+    .gallery {
+        grid-template-columns: 1fr; /* Единствена колона при малки екрани */
     }
 
-    .service {
-        width: 80%;
-        margin-bottom: 20px;
+    #car-details {
+        padding: 1.5rem; /* Малко по-малко padding при малки екрани */
     }
+}
 
-    .testimonial-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .testimonial {
-        width: 80%;
-        margin-bottom: 20px;
+@media (hover: none) {
+    .gallery img:hover {
+        transform: none; /* Премахване на hover ефекта на мобилни устройства */
     }
 }

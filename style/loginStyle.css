@@ -1,11 +1,12 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 :root {
-    /* Дефиниране на глобални променливи за цветове и стилове */
     --primary-bg: #f5f6fa; /* Светъл фон */
     --header-bg: #1a5276; /* Тъмен син за хедъра */
     --text-color: #222; /* Тъмен цвят на текста */
@@ -82,8 +83,8 @@ nav a:hover {
     transform: translateY(-2px); /* Малка трансформация нагоре при hover */
 }
 
-/* Booking Form */
-#booking-form {
+/* Login Form */
+#login {
     background-color: var(--white); /* Бял фон за формата */
     padding: 30px;
     margin: 20px auto;
@@ -93,7 +94,7 @@ nav a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Сянка около формата */
 }
 
-#booking-form h2 {
+#login h2 {
     font-size: 2.2em;
     color: var(--header-bg);
     text-align: center;
@@ -111,17 +112,13 @@ form label {
     color: var(--text-color);
 }
 
-form input, form select, form button {
+form input {
     padding: 12px;
     font-size: 1.1em;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 100%;
     max-width: 500px;
-}
-
-form input[type="number"], form input[type="date"] {
-    width: 48%; /* дата и число */
 }
 
 form button {
@@ -137,7 +134,7 @@ form button {
 
 form button:hover {
     background-color: var(--btn-hover); /* По-тъмен фон при hover */
-    transform: translateY(-2px); 
+    transform: translateY(-2px);
 }
 
 /* Footer */
@@ -169,16 +166,12 @@ footer p {
         padding: 12px 25px;
     }
 
-    #booking-form h2 {
+    #login h2 {
         font-size: 1.8em;
     }
 
-    form input, form select, form button {
+    form input, form button {
         font-size: 1.1em;
         padding: 10px;
-    }
-
-    form input[type="number"], form input[type="date"] {
-        width: 100%; /* По-широки полета за мобилни устройства */
     }
 }

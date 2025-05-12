@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход - Luxury Rentals</title>
+  <link rel="stylesheet" href="../style/loginStyle.css">
+</head>
+
+<body>
+
+  <section id="header">
+    <header>
+      <h1>Вход в профила</h1> <!-- Заглавие -->
+      <nav>
+        <!-- Навигационни връзки към различни страници -->
+        <a href="../main/home.html">Home Page</a><!-- Връзка към началната страница -->
+        <a href="../main/cars.html">Our Cars</a> <!-- Връзка към страницата с коли -->
+        <a href="../main/rent.html">How to Rent</a> <!-- Връзка с информация за наемане -->
+        <a href="../main/contact.html">Contacts</a>  <!-- Връзка към контактната страница -->
+        <a href="../main/booking.html">Booking</a> <!-- Връзка към страницата за резервация -->
+        <a href="../main/about.html">About Us</a> <!-- Връзка към страницата за нас -->
+        <a href="../main/login.html">Log In</a> <!-- Връзка към страницата за регистрация -->
+      </nav>
+    </header>
+  </section>
+
+  <section id="login">
+    <h2>Влезте в профила си</h2> <!-- Заглавие на секцията -->
+    <form action="login_process.php" method="POST"> <!-- Форма за вход -->
+      <label for="email">Електронна поща</label>
+      <input type="email" id="email" name="email" placeholder="Вашият имейл" required> <!-- Поле за имейл -->
+      
+      <label for="password">Парола</label>
+      <input type="password" id="password" name="password" placeholder="Вашата парола" required> <!-- Поле за парола -->
+      
+      <button type="submit" class="btn">Влезте</button> <!-- Бутон за вход -->
+    </form>
+    <p>Нямате акаунт? <a href="../main/register.html">Регистрирайте се тук</a></p> <!-- Линк към регистрация -->
+  </section>
+
+  <!-- авторски права -->
+  <footer>
+    <p>&copy; 2025 Luxury Rentals. Всички права запазени.</p> <!-- Информация за авторски права -->
+  </footer>
+
+</body>
+
+</html>
